@@ -1,0 +1,33 @@
+
+{% load static%}
+{%  block titulo %}
+	Lista filtro
+		
+{% endblock titulo %}
+	
+{% block contenido %}
+
+<body>
+	
+			<h2 class="tor">filtros que hay  </h2>
+	<div>
+	{% for p in lista %}
+		
+		<div class="corto">
+			<div>
+			<!-- <img src="/media/{{p.imagen}}" width="170px"> -->
+			</div>
+
+			{{p.tipo_genero}}
+	<br>
+	<br>
+			{{p.tipo }}
+	<br>
+	<br>
+			{{p.fil_Fecha }}
+	<br>
+		</div>
+	</div>
+	{% endfor %}
+</body>
+ {% endblock %}

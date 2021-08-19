@@ -1,0 +1,16 @@
+
+{% load static%}
+{%  block titulo %}
+	Agregar_genero
+{% endblock titulo %}
+{% block contenido %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vista_agregar_filtro.css' %}">
+<div>
+		<h1>AGREGE UN FILTRO </h1>
+	<form action="" method="POST" enctype="multypart/form-data">
+		{% csrf_token %}
+		{{ formulario.as_p}}
+		<input type="submit" value="Agregar_filtro">
+	</form>
+</div>
+{%endblock%}

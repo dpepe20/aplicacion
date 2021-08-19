@@ -1,0 +1,46 @@
+{% extends "inicio.html" %}
+{% load static%}
+{%  block titulo %}
+	Lista estrenos
+		
+{% endblock titulo %}
+	
+{% block contenido %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/lista_estreno.css' %}">
+
+<body>
+	
+			<h2 class="tor">Peliculas Estreno  </h2>
+	<div class="row">
+	{% for p in lista %}
+		
+		
+    <div class="col s12 m3 x3 xl3 ">
+      <div class="card large">
+        <div class="card-image">
+			<img src="/media/{{p.imagenes}}"> 
+          <span class="card-title">{{p.des_Nombre}}</span>
+        </div>
+        <div class="card-content">
+         NOMBRE : {{p.ext_Nombree}}
+			<br>
+			
+			FECHA-ESTRENO : {{p.fecha_estreno}}
+			<br>
+			
+
+			IDIOMA : 	{{p.ext_Idioma }}
+			<br>
+		
+	
+			sipnosis :  {{p.ext_descripcion}}
+			
+			<br>
+
+        </div>
+      </div>
+    </div>
+  	{% endfor %}
+	</div>
+</body>
+ {% endblock %}

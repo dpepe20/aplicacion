@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <title>
+    {% block titulo %}
+    {% endblock%}
+  </title>
+    {% include 'head.html' %}
+</head>
+<body>	
+
+   {% include 'navegation.html' %}
+<div class="container text-center">
+
+  <h1>BIENVENIDO {{user}}</h1>
+
+</div>
+<div class="container">
+  <header class="row">
+    <div class="col-lg-12 text-center">
+          <img src="{% static "img/real.png" %}" class="animated" alt="50%" width="50%">   
+    </div>
+  </header>
+</div>
+<div class="container-fluid" id="about">
+  <div class="row bg-dark text-white p-5 text-center">
+    <div class="col-sm-6">
+      <i class="fab fa-youtube fa-10x">
+      </i>
+    </div>
+
+    <div class="col-sm-6">
+      <h3>THE MOST SUSCRIBE HTML</h3>
+      <p>
+        Aunque ya debemos tener la costumbre de indentar nuestro código, a veces copiamos y pegamos partes de código o trabajamos con código escrito por terceros. O quizá alguien tocó nuestro código y lo dejó un poco desordenado. Para estos casos tenemos Sublime-HTMLPrettify.
+      </p>
+
+    </div>
+
+
+
+    
+
+  </div>
+</div>
+{% include 'footer.html' %}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+  {% include 'navegation.html' %}
+  {% load static%}
+  {%  block titulo %}
+  <link rel="stylesheet" type="text/css" href=" {% static 'css/lista_peliculas.css' %}"/> 
+  <title>LISTA_PELICULAS</title>
+  
+  {% endblock titulo %}
+  {% include 'head.html' %}
+  <body>
+  	{% block contenido %}
+    <div class="container">
+
+  <!-- {%block barrabusqueda%} -->
+      <div class=" container" id="buscarr">
+        <form class="form-inline my-2 my-lg-0" method="get">
+          <input class="form-control mr-sm-2" type="search" placeholder="Nombre_pelicula"   name="buscar" value="{{request.GET.buscar}}">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">BUSCAR</button>
+        </form>
+      </div>
+      
+      <!--{% endblock barrabusqueda%} -->
+
+
+
+      <div class="  papa container row text-center">
+        {% for p in lista %}
+        <div class="panda">
+          <div class="col-md-4">
+            <div id="mo" class="card" style="width: 18rem;">
+              <img src="/media/{{p.imagen}}" class="card-img-top"  width="100" height="300">
+              <div class="card-body">
+                <h5 class="card-title">{{p.nombre}}</h5>
+                <p class="card-text">{{p.descripcion}}</p>
+                <a href="{% url 'vista_ver_pelicula' id_peli=p.id %}" class=" btn btn-primary">DETALLES</a>
+                <a href="{{p.Ver_online}}" class=" btn btn-primary" target="_blank">ONLINE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+          <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6 float-left">
+            {% if lista.has_previous %}
+            <div class="clearfix">
+              <a class="btn btn-primary float-left" href="?page={{lista.previous_page_number}} {% if request.GET.search %} &q={{request.GET.search}}{%endif%}">Anterior</a>
+            </div>
+            {% endif%}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6 float-right">
+              {% if lista.has_next %}
+              <div class="clearfix">
+                <a class="btn btn-primary float-left" href="?page={{lista.next_page_number}}{% if request.GET.search %} &q={{request.GET.search}}{%endif%} ">Siguiente</a>
+              </div>
+              {% endif%}
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- fin del container principal-->
+    </div>
+    <!-- fin del container principal-->
+    {% endblock %}
+    {% include 'footer.html' %}
+  </body>

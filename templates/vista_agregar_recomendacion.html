@@ -1,0 +1,14 @@
+{% extends 'inicio.html' %}
+{% load static%}
+{%block titulo %}
+ AGREGAR peliculas recomendadas
+{%endblock titulo %}
+{% block contenido %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vista_agregar_recomendacion.css' %}">
+			<h4>RECOMENDAR UNA PELICULA</h4>
+		<form action="" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ formulario.as_p }}
+		<input type="submit" value="Agregar_recomendada">
+	</form>
+{%endblock%}

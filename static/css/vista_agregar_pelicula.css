@@ -1,0 +1,67 @@
+.agregar{
+
+	background:rebeccapurple;
+	padding-top:1%;
+	margin-bottom:1%;
+	padding-letfh:40%;
+}
+.name{
+	background: rebeccapurple;
+	width: 50%;
+	padding-bottom: 1%;
+}
+.descripcion{
+	background: rebeccapurple;
+	width: 50%;
+	padding-bottom: 1%;
+}
+.fecha{
+
+	background: rebeccapurple;
+	width: 50%;
+	padding-bottom: 1%;
+}
+.idioma{
+	background: rebeccapurple;
+	width: 50%;
+	padding-bottom: 1%;
+}
+.calidad{
+	background: rebeccapurple;
+	width: 50%;
+	padding-bottom: 1%;
+}
+.generos{
+	background: rebeccapurple;
+	width: 50%;
+	padding-bottom: 1%;
+}
+.filtros{
+	background: rebeccapurple;
+	width: 50%;
+	padding-bottom: 1%;
+}
+.descargas{
+	background: rebeccapurple;
+	width: 50%;
+	padding-bottom: 1%;
+}
+.imagen{
+	background: rebeccapurple;
+	width: 50%;
+	padding-bottom: 1%;
+}
+.veronline{
+	background: rebeccapurple;
+	width: 50%;
+	padding-bottom: 1%;
+}
+.btngenero{
+
+	background: rebeccapurple;
+	width: 20%;
+	padding-bottom: 1%;
+	margin-top: 1%;
+	text-align: right;
+	
+}

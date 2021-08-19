@@ -1,0 +1,285 @@
+
+{% load static%}
+{%  block titulo %}
+
+{% endblock titulo %}
+<title>Agregar_pelicula</title>
+{% block contenido %}
+{% include 'head.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/vista_agregar_pelicula.css' %}">
+  <!--CONTENIDO-->
+  <div class="card-header bg-dark text-white text-center">
+    <div class="card-body">
+      <div class=" container agregar">
+        <h1 class="registerpeli">REGISTRAR PELICULA</h1>
+          <div class=" btncontainer row container">
+            <div class="container btngenero ">
+              <button   >
+                <a  class="btn btn-primary" href="{% url 'vista_agregar_genero' %}">AGREGAR_GENERO</a>
+              </button>
+            </div>
+
+            <div class="container btngenero ">
+              <button  >
+                <a  class="btn btn-primary" href="{% url 'vista_agregar_filtro' %}">AGREGAR_FILTROS</a>
+              </button>
+            </div>
+            <div class="container btngenero ">
+              <button  >
+                <a  class="btn btn-primary" href="{% url 'vista_agregar_descarga' %}">AGREGAR_DESCARGA</a>
+              </button>
+            </div>
+
+          </div>
+       
+
+        <form action="" method="POST"  enctype="multipart/form-data">
+          {% csrf_token %}
+          
+          <!--{{ formulario.as_p }} -->
+      
+      
+        {{ bod.management_form }}
+      
+            <div class="container name text-center">
+              <div class="form-group">
+                <div>
+                  <div>
+                    <label for="username">NOMBRE</label>
+                    
+                    <div class="form-label-group">
+                                              {{formulario.nombre.errors}}
+                      {{formulario.nombre}}
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          <!-- .errors-->
+          <div class="container descripcion">
+            <div class="form-group">
+              <label>DESCRIPCION </label>
+              <div id="d" class="wrap-input100 validate-input m-b-23"   >
+                {{formulario.descripcion}}
+             <!--<span class="focus-input100" data-symbol="&#xf206;"></span> --> 
+              </div>
+            </div>
+          </div>
+           <!-- .errors-->
+      
+      
+           <div class="container fecha text-center">
+            <div class="form-group">
+              <div>
+                <div>
+                  <label for="username">FECHA</label>
+                  <div class="form-label-group">
+                    {{formulario.fecha.errors}}
+                    {{formulario.fecha}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="container idioma text-center">
+            <div class="form-group">
+              <div>
+                <div>
+                  <label for="username">IDIOMA</label>
+                  
+                  <div class="form-label-group">
+                                           
+                    {{formulario.idioma}}
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="container calidad text-center">
+            <div class="form-group">
+              <div>
+                <div>
+                  <label for="username">CALIDAD</label>
+                  
+                  <div class="form-label-group">                  
+                    {{formulario.calidad}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="container generos text-center">
+            <div class="form-group">
+              <div>
+                <div>
+                  <label for="username">GENEROS</label>
+                  
+                  <div class="form-label-group">
+                    {{formulario.generos.errors}}
+                    {{formulario.generos}}
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="container filtros text-center">
+            <div class="form-group">
+              <div>
+                <div>
+                  <label for="username">FILTROS</label>
+                  <div class="form-label-group">                           
+                    {{formulario.filtros}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container descargas text-center">
+            <div class="form-group">
+              <div>
+                <div>
+                  <label for="username">DESCARGAS</label>
+                  <div class="form-label-group">                           
+                    {{formulario.descargas}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="container imagen text-center">
+            <div class="form-group">
+              <div>
+                <div>
+                  <label for="username">IMAGEN</label>
+                  <div class="form-label-group">                           
+                    {{formulario.imagen}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      
+          <div class="container veronline text-center">
+            <div class="form-group">
+              <div>
+                <div>
+                  <label for="username">VER_ONLINE</label>
+                  <div class="form-label-group">                           
+                    {{formulario.Ver_online}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+   
+          <!--   <input   class="btn btn-success" type="submit" value="Agregar_pelicula">  -->
+         <button class="btn btn-success" type="submit" value="Agregar_pelicula">AGREGAR</button> 
+        </form>
+        <br>
+      </div>
+      <div class="form-group">
+        <div class="container text-center ">
+          <div class="form-group">
+            <div class="w-full text-center">
+              <a href="{% url 'lista_peliculas' %}" class="txt3">
+                REGRESAR
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--CONTENIDO FIN -->
+
+{% include 'footer.html' %}
+
+<script type="text/javascript">
+
+  $("#id_fecha").datepicker({
+   closeText: 'Cerrar',
+   prevText: '< Ant',
+   nextText: 'Sig >',
+   dateFormat: 'yy-mm-dd',
+   autoClose: true,
+   firstDay: 1,
+   monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+   monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+   dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+   dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+   dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+
+
+
+
+ });
+
+
+</script>
+
+{%endblock%}
+
+
+
+
+
+<!-- enctype="multipart/form-data"-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

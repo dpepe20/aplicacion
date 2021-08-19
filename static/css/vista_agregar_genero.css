@@ -1,0 +1,14 @@
+body{
+	background: #333;
+}
+form{
+	width: 400px;
+	border :30px solid #555;
+	margin-top: 100px;
+	margin-left: 400px;
+}
+h1{
+	background:#222;
+	margin-left: 300px;
+	width: 600px;
+}

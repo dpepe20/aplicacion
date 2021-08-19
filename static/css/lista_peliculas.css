@@ -1,0 +1,36 @@
+#mo{
+  border: 5px solid white;
+  border-color:green;
+
+}
+
+.panda{
+	padding-top:1%;
+	background:blue;
+	padding-left:2%;
+	padding-right:1%;
+	padding-bottom:1%;
+	text-align: center;
+	float:none;
+	padding: center;
+	line-height:100%;
+	display:inline-block;
+}
+.papa{
+	
+	
+	margin: 1%;
+	padding: center;
+}
+#buscarr{
+	
+	padding-top:1%;
+	padding-bottom:1%;
+	width: 30%;
+	
+	float:right;
+
+}
+.card:hover{
+	transform: scale(1.03);
+}

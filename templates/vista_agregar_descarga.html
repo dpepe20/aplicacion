@@ -1,0 +1,19 @@
+
+{% load static%}
+{%  block titulo %}
+	Agregar_descarga
+{% endblock titulo %}
+{% block contenido %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/vista_agregar_descargas.css' %}">
+	<div class="container">
+			<h5>AGREGAR DESCARGA</h5>
+<div>
+	<form action="" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ formulario.as_p }}
+		<input type="submit" value="Agregar_descarga">
+
+	</form>
+</div>
+</div>
+{%endblock%}
